@@ -47,7 +47,7 @@ model.add(Dense(32, activation='relu'))
 model.add(Dense(actions.shape[0], activation='softmax'))
 
 model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['categorical_accuracy'])
-model.fit(X_train, y_train, epochs=200, callbacks=[tb_callback])
+model.fit(X_train, y_train, epochs=20, callbacks=[tb_callback])
 
 model_json = model.to_json()
 with open("model.json", "w") as json_file:
